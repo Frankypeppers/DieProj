@@ -1,22 +1,23 @@
 
 /**
- * Abstracts one six-sided die (plural is dice)
+ * Abstracts one n-sided die (plural is dice)
  * 
  * @Mr. Jaffe
  * @1.0 2017-07-13
  */
-public class Die20
+public class DieN
 {
   /**
    * Contains the current value of the die
    */
   private int value;
-
+  private int n;
   /**
    * Constructor to do an initial roll to set the first value
    */
-  public Die20() {
+  public DieN(int n) {
     this.roll();
+    this.n = n;
   }
 
   /**
@@ -32,7 +33,7 @@ public class Die20
    * Note that roll does NOT return the new value
    */
   public void roll() {
-    this.value = (int)(Math.random() * 20) + 1;
+    this.value = (int)(Math.random() * n) + 1;
   }
 
   /**
