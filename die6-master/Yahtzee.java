@@ -5,39 +5,40 @@ public class Yahtzee
      * 
      * >:(
      */
-    
-    Die6 die1;
-    Die6 die2;
-    Die6 die3;
-    Die6 die4;
-    Die6 die5;
-    Die6 die6;
-    
+
+    Die6[] dice = new Die6[5];
+
     /**
      * Constructor
      */
     public Yahtzee()
     {
-        die1 = new Die6();
-        die2 = new Die6();
-        die3 = new Die6();
-        die4 = new Die6();
-        die5 = new Die6();
-        die6 = new Die6();
+        for (int i = 0; i < dice.length; i++) {
+            dice[i] = new Die6();
+        }
     }
-    
+
     public void roll()
     {
-        die1.roll();
-        die2.roll();
-        die3.roll();
-        die4.roll();
-        die5.roll();
-        die6.roll();
+        for (int i = 0; i < dice.length; i++) {
+            dice[i].roll();
+        }
     }
-    
-    public void rollDie()
+
+    public void roll(int dieNumber)
     {
-        
+        if (dieNumber == 1) {
+            dice[0].roll();
+        } else if (dieNumber == 2) {
+            dice[1].roll();
+        } else if (dieNumber == 3) {
+            dice[2].roll(); 
+        } else if (dieNumber == 4) {
+            dice[3].roll();
+        } else if (dieNumber == 5) {
+            dice[4].roll();
+        } else if (dieNumber == 6) {
+            dice[5].roll();
+        } 
     }
 }
